@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.16)
+project(EatingBattle_Stage4 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_AUTOMOC ON)
+
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
+
+set(SOURCES
+    src/main.cpp src/mainwindow.cpp src/gamescene.cpp
+    src/player.cpp src/gamestate.cpp src/fooditem.cpp src/trapitem.cpp
+)
+
+set(HEADERS
+    src/mainwindow.h src/gamescene.h src/player.h
+    src/gamestate.h src/fooditem.h src/trapitem.h
+)
+
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
